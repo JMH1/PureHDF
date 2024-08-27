@@ -22,7 +22,7 @@ internal partial record class LinkMessage
 
         // link name encoding
         if (Flags.HasFlag(LinkInfoFlags.LinkNameEncodingFieldIsPresent))
-            driver.Write((byte)CharacterSetEncoding.UTF8);
+            driver.Write((byte)CharacterSetEncoding.ASCII);
 
         // link length
         var encodedName = Encoding.UTF8.GetBytes(LinkName);

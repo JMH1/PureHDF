@@ -634,8 +634,8 @@ internal partial record class DatatypeMessage : Message
 
             new VariableLengthBitFieldDescription(
                 Type: InternalVariableLengthType.String,
-                PaddingType: PaddingType.NullPad,
-                Encoding: CharacterSetEncoding.UTF8
+                PaddingType: PaddingType.NullTerminate,
+                Encoding: CharacterSetEncoding.ASCII
             ),
 
             new VariableLengthPropertyDescription[] {
@@ -691,8 +691,8 @@ internal partial record class DatatypeMessage : Message
             (uint)length,
 
             new StringBitFieldDescription(
-                PaddingType: PaddingType.NullPad,
-                Encoding: CharacterSetEncoding.UTF8
+                PaddingType: PaddingType.NullTerminate,
+                Encoding: CharacterSetEncoding.ASCII
             ),
 
             Array.Empty<DatatypePropertyDescription>()
